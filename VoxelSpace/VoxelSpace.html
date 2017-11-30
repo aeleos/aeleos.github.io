@@ -404,12 +404,12 @@ function Render()
         plx += camera.x;
         ply += camera.y;
         var invz = 1. / z * 240.;
+        console.log("invz", invz);
         for(var i=0; i<screenwidth|0; i=i+1|0)
         {
             var mapoffset = ((Math.floor(ply) & mapwidthperiod) << map.shift) + (Math.floor(plx) & mapheightperiod)|0;
             var heightonscreen = (camera.height - map.altitude[mapoffset]) * invz + camera.horizon|0;
             DrawVerticalLine(i, heightonscreen|0, hiddeny[i], map.color[mapoffset]);
-            console.log("i: ", i, " ytop: ", heightonscreen, " tbottom: ", hiddeny[i]);
             if (heightonscreen < hiddeny[i]) hiddeny[i] = heightonscreen;
             plx += dx;
             ply += dy;
