@@ -413,6 +413,8 @@ function Render()
             if (heightonscreen < hiddeny[i]) {
               hiddeny[i] = heightonscreen;
               console.log("i: ", i, " ytop: ", heightonscreen, " tbottom: ", hiddeny[i]);
+            } else {
+              console.log("heightonscreen: ", heightonscreen);
             }
             plx += dx;
             ply += dy;
