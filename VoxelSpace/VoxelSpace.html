@@ -343,8 +343,14 @@ function DrawVerticalLine(x, ytop, ybottom, col)
     col = col|0;
     var buf32 = screen.buf32;
     var screenwidth = screen.canvas.width|0;
-    if (ytop < 0) ytop = 0;
-    if (ytop > ybottom) return;
+    if (ytop < 0) {
+      ytop = 0;
+      console.log("here1");
+    }
+    if (ytop > ybottom) {
+      console.log("here2");
+      return;
+    }
 
     // get offset on screen for the vertical line
     var offset = ((ytop * screenwidth) + x)|0;
